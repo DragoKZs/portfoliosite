@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мобильное приложение "Столовая ToU" | Портфолио Мадена Ернара</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Дополнительные стили для страницы проекта */
+        .project-hero {
+            padding: 150px 0 80px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-align: center;
+        }
+        
+        .project-hero h1 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+        
+        .project-hero p {
+            font-size: 1.3rem;
+            max-width: 700px;
+            margin: 0 auto;
+            opacity: 0.95;
+        }
+        
+        .project-hero .project-badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            backdrop-filter: blur(10px);
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-size: 1rem;
+            margin-bottom: 30px;
+            border: 1px solid rgba(255,255,255,0.3);
+        }
+        
+        .project-section {
+            padding: 80px 0;
+        }
+        
+        .project-section.bg-light {
+            background-color: var(--light-color);
+        }
+        
+        .project-section h2 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 50px;
+            color: var(--dark-color);
+        }
+        
+        .project-section h2 .highlight {
+            color: var(--primary-color);
+        }
+        
+        .project-section h2.white {
+            color: white;
+        }
+        
+        .project-section h2.white .highlight {
+            color: #ffd700;
+        }
+        
+        .overview-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+        
+        .overview-text p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--gray-color);
+            margin-bottom: 20px;
+        }
+        
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 15px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            transition: var(--transition);
+        }
+        
+        .feature-item:hover {
+            transform: translateX(10px);
+            box-shadow: 0 10px 30px rgba(79, 70, 229, 0.15);
+        }
+        
+        .feature-item i {
+            font-size: 1.8rem;
+            color: var(--primary-color);
+        }
+        
+        .feature-item span {
+            font-weight: 500;
+        }
+        
+        .tech-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 30px;
+        }
+        
+        .tech-card {
+            flex: 1 1 calc(50% - 15px);
+            min-width: 200px;
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            text-align: center;
+            transition: var(--transition);
+        }
+        
+        .tech-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(79, 70, 229, 0.2);
+        }
+        
+        .tech-card i {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+        
+        .tech-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+        
+        .tech-card p {
+            color: var(--gray-color);
+        }
+        
+        .main-screenshot {
+            text-align: center;
+        }
+        
+        .main-screenshot img {
+            max-width: 100%;
+            max-height: 600px;
+            border-radius: 30px;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.3);
+            border: 3px solid white;
+        }
+        
+        .screenshot-gallery-modern {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .gallery-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+            transition: var(--transition);
+        }
+        
+        .gallery-card:hover {
+            transform: translateY(-15px) scale(1.02);
+            box-shadow: 0 30px 60px rgba(79, 70, 229, 0.3);
+        }
+        
+        .gallery-card img {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+        
+        .gallery-card:hover img {
+            transform: scale(1.05);
+        }
+        
+        .gallery-card p {
+            padding: 20px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            text-align: center;
+            background: white;
+            position: relative;
+        }
+        
+        .gallery-card p::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+            border-radius: 3px;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            text-align: center;
+        }
+        
+        .stat-item {
+            background: white;
+            padding: 40px 20px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            transition: var(--transition);
+        }
+        
+        .stat-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(79, 70, 229, 0.2);
+        }
+        
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+        
+        .stat-label {
+            font-size: 1.1rem;
+            color: var(--gray-color);
+        }
+        
+        .role-timeline {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+        
+        .role-card {
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            transition: var(--transition);
+        }
+        
+        .role-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(79, 70, 229, 0.2);
+        }
+        
+        .role-card i {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+        
+        .role-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .role-card .date {
+            color: var(--primary-color);
+            font-weight: 600;
+            margin-bottom: 20px;
+            display: inline-block;
+            padding: 5px 15px;
+            background: rgba(79, 70, 229, 0.1);
+            border-radius: 30px;
+        }
+        
+        .role-card ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .role-card ul li {
+            margin-bottom: 10px;
+            padding-left: 25px;
+            position: relative;
+        }
+        
+        .role-card ul li::before {
+            content: '▹';
+            position: absolute;
+            left: 0;
+            color: var(--primary-color);
+        }
+        
+        .navigation-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 60px;
+        }
+        
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+        }
+        
+        .btn-outline:hover {
+            background: var(--primary-color);
+            color: white;
+        }
+        
+        @media (max-width: 992px) {
+            .overview-grid,
+            .stats-grid,
+            .role-timeline {
+                grid-template-columns: 1fr;
+            }
+            
+            .project-hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .project-hero {
+                padding: 120px 0 60px;
+            }
+            
+            .project-hero h1 {
+                font-size: 2rem;
+            }
+            
+            .tech-card {
+                flex: 1 1 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Навигация -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">Портфолио</a>
+            <ul class="nav-links">
+                <li><a href="index.html#home">Главная</a></li>
+                <li><a href="index.html#about">Обо мне</a></li>
+                <li><a href="index.html#skills">Навыки</a></li>
+                <li><a href="index.html#portfolio">Портфолио</a></li>
+                <li><a href="index.html#contact">Контакты</a></li>
+            </ul>
+            <button class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero секция проекта -->
+    <section class="project-hero">
+        <div class="container">
+            <span class="project-badge">
+                <i class="fas fa-star"></i> Дипломный проект
+            </span>
+            <h1>Мобильное приложение<br>"Столовая ToU"</h1>
+            <p>Полноценная экосистема для заказа еды в университетской столовой с тремя ролями пользователей и управлением в реальном времени</p>
+        </div>
+    </section>
+
+    <!-- Обзор проекта -->
+    <section class="project-section">
+        <div class="container">
+            <div class="overview-grid">
+                <div class="overview-text">
+                    <h2>О проекте <span class="highlight">в деталях</span></h2>
+                    <p>Это моя дипломная работа — мобильное приложение, которое полностью автоматизирует процесс заказа еды в университетской столовой. Главная цель — избавиться от очередей и сделать процесс заказа максимально удобным для всех участников.</p>
+                    <p>Приложение решает реальную проблему: в часы пик в столовой скапливаются огромные очереди, студенты тратят по 15-20 минут на обед. С моим приложением они могут заранее выбрать блюда, оплатить онлайн и просто забрать готовый заказ.</p>
+                    
+                    <div class="feature-grid">
+                        <div class="feature-item">
+                            <i class="fas fa-user-graduate"></i>
+                            <span>Для студентов</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-utensils"></i>
+                            <span>Для сотрудников</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-crown"></i>
+                            <span>Для администратора</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-clock"></i>
+                            <span>Real-time обновления</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="main-screenshot">
+                    <img src="5316504544596396802.jpg" alt="Экран входа в приложение">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ключевые возможности -->
+    <section class="project-section bg-light">
+        <div class="container">
+            <h2><span class="highlight">Ключевые</span> возможности</h2>
+            
+            <div class="screenshot-gallery-modern">
+                <div class="gallery-card">
+                    <img src="5316504544596396820.jpg" alt="Главное меню">
+                    <p>📱 Главное меню и корзина</p>
+                </div>
+                <div class="gallery-card">
+                    <img src="5316504544596396809.jpg" alt="Управление меню">
+                    <p>⚙️ Панель администратора</p>
+                </div>
+                <div class="gallery-card">
+                    <img src="5316504544596396824.jpg" alt="Панель сотрудника">
+                    <p>👨‍🍳 Панель сотрудника</p>
+                </div>
+                <div class="gallery-card">
+                    <img src="5316504544596396821.jpg" alt="История заказов">
+                    <p>📋 История заказов</p>
+                </div>
+                <div class="gallery-card">
+                    <img src="5316504544596396811.jpg" alt="Добавление товара">
+                    <p>➕ Управление товарами</p>
+                </div>
+                <div class="gallery-card">
+                    <img src="5316504544596396826.jpg" alt="Завершенный заказ">
+                    <p>✅ Статусы заказов</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Статистика проекта -->
+    <section class="project-section">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number">3</div>
+                    <div class="stat-label">Роли пользователей</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">9+</div>
+                    <div class="stat-label">Экранов приложения</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">4</div>
+                    <div class="stat-label">Категории меню</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Технологии -->
+    <section class="project-section bg-light">
+        <div class="container">
+            <h2>Использованные <span class="highlight">технологии</span></h2>
+            
+            <div class="tech-grid">
+                <div class="tech-card">
+                    <i class="fab fa-flutter"></i>
+                    <h3>Flutter & Dart</h3>
+                    <p>Кроссплатформенная разработка для iOS и Android</p>
+                </div>
+                <div class="tech-card">
+                    <i class="fas fa-database"></i>
+                    <h3>Firebase / MySQL</h3>
+                    <p>База данных и real-time синхронизация</p>
+                </div>
+                <div class="tech-card">
+                    <i class="fas fa-code-branch"></i>
+                    <h3>Provider / BLoC</h3>
+                    <p>Управление состоянием приложения</p>
+                </div>
+                <div class="tech-card">
+                    <i class="fas fa-paint-brush"></i>
+                    <h3>Figma</h3>
+                    <p>Дизайн и прототипирование интерфейсов</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Моя роль и сроки -->
+    <section class="project-section">
+        <div class="container">
+            <h2>Процесс <span class="highlight">разработки</span></h2>
+            
+            <div class="role-timeline">
+                <div class="role-card">
+                    <i class="fas fa-pencil-ruler"></i>
+                    <h3>Дизайн</h3>
+                    <span class="date">2 недели</span>
+                    <ul>
+                        <li>Создание прототипов в Figma</li>
+                        <li>Дизайн всех экранов</li>
+                        <li>Адаптация под разные устройства</li>
+                    </ul>
+                </div>
+                
+                <div class="role-card">
+                    <i class="fas fa-code"></i>
+                    <h3>Разработка</h3>
+                    <span class="date">4 недели</span>
+                    <ul>
+                        <li>Настройка базы данных</li>
+                        <li>Создание UI компонентов</li>
+                        <li>Интеграция с Firebase</li>
+                        <li>Тестирование и отладка</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Навигация -->
+    <section class="project-section bg-light">
+        <div class="container">
+            <div class="navigation-buttons" style="justify-content: center;">
+                <a href="index.html#portfolio" class="btn btn-primary" style="padding: 15px 40px; font-size: 1.1rem;">
+                    <i class="fas fa-arrow-left" style="margin-right: 10px;"></i> Назад к портфолио
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Футер -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Маден Ернар. Все права защищены.</p>
+            <p>Портфолио студента-разработчика</p>
+        </div>
+    </footer>
+
+    <!-- Кнопка "Наверх" -->
+    <a href="#" class="scroll-top">
+        <i class="fas fa-chevron-up"></i>
+    </a>
+
+    <script src="script.js"></script>
+</body>
+</html>
